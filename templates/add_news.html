@@ -3,44 +3,44 @@
 {% block content %}
 
 <h1>Добавить новость</h1>
-<table>
-    <tr>
-        <td style="text-align:right">
-            <label for="title">Заголовок:</label>
-        </td>
-        <td>
-            <div class="form-group">
-                <input type="text" class="form-control" id="title" name="title" required>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:right">
-            <label for="content">Текст новости:</label>
-        </td>
-        <td>
-            <div class="form-group">
-                <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:right">
-            <label for="author">Автор:</label>
-        </td>
-        <td>
-            <div class="form-group">
-                <input type="text" class="form-control" id="author" name="author" required>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            <button type="submit" class="btn btn-primary">Добавить</button>
-        </td>
-    </tr>
-</table>
+<form action="{{ url_for('add_news') }}" method="POST">
+    <table>
+        <tr>
+            <td style="text-align:right">
+                <label for="title">Заголовок:</label>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:right">
+                <label for="content">Текст новости:</label>
+            </td>
+            <td>
+                <div class="form-group">
+                    <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:right">
+                <label for="author">Автор:</label>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="author" name="author" required>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary">Добавить</button>
+            </td>
+        </tr>
+    </table>
+</form>
 {% endblock %}
-
-
