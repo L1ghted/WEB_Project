@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="UTF-8">
+<head>
+    <title>{% block title %}{% endblock %} - Новости</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Главная</a></li>
+        {% if 'user_id' in session %}
+        <li><a href="{{ url_for('dashboard') }}">Редактор</a></li>
+        <li><a href="{{ url_for('add_news') }}">Добавить новость</a></li>
+        <li><a href="{{ url_for('logout') }}">Выйти</a></li>
+        {% else %}
+        <li><a href="{{ url_for('login') }}">Войти</a></li>
+        <li><a href="{{ url_for('register') }}">Регистрация</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% block content %}
+{% endblock %}
+</body>
+</html>

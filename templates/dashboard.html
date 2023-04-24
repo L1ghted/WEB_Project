@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Панель управления</title>
+</head>
+<body>
+<h1>Панель управления</h1>
+<p>Добро пожаловать {{ session.username }}!</p>
+<ul>
+    {% for item in news %}
+    <li>
+        <h2>{{ item[2] }}</h2>
+        <p>{{ item[3] }}</p>
+        <p>Автор: {{ item[4] }}</p>
+        <p>Дата публикации: {{ item[5] }}</p>
+        {% if session.user_id == user_id %}
+        <a href="{{ url_for('edit_news', id=item[0]) }}">Редактировать</a>
+        <a href="{{ url_for('delete_news', id=item[0]) }}">Удалить</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+</body>
+{% endblock %}

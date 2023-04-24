@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <td>
+            <head>
+                <title>Вход</title>
+            </head>
+            <body>
+            <h1>Вход</h1>
+            {% if error %}
+            <p>Неверное имя пользователя или пароль</p>
+            {% endif %}
+            <form method="POST" action="{{ url_for('login') }}">
+                <table>
+                    <tr>
+                        <td><label>Имя пользователя:</label></td>
+                        <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Пароль:</label></td>
+                        <td><input type="password" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Войти"></td>
+                    </tr>
+                </table>
+            </form>
+            </body>
+        </td>
+    </tr>
+</table>
+{% endblock %}

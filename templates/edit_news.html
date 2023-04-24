@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <td>
+            <h1 style="margin-top: 0;">Редактировать новость</h1>
+            <form method="POST">
+                <table>
+                    <tr>
+                        <td><label for="title">Заголовок:</label></td>
+                        <td><input type="text" class="form-control" id="title" name="title" value="{{ news_item[2] }}"
+                                   required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="content">Содержание:</label></td>
+                        <td><textarea class="form-control" id="content" name="content" rows="5" required>{{ news_item[3] }}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="author">Автор:</label></td>
+                        <td><input type="text" class="form-control" id="author" name="author" value="{{ news_item[4] }}"
+                                   required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+</table>
+{% endblock %}
