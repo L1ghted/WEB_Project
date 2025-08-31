@@ -26,13 +26,14 @@ def init_db():
                 title TEXT NOT NULL,
                 content TEXT NOT NULL,
                 author TEXT NOT NULL,
-                created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                user_id INTEGER,
+                created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (user_id) REFERENCES users (id)
             );
         ''')
         conn.commit()
 
 
-@app.before_first_request
 def init_db_tables():
     init_db()
 
@@ -93,7 +94,7 @@ def dashboard():
         return redirect(url_for('login'))
     with connect_db() as conn:
         cursor = conn.cursor()
-        cursor.execute('SELECT id, user_id, title, content, author, created_on FROM news ORDER BY created_on DESC')
+        cursor.execute('SELECT id, title, content, author, created_on FROM news WHERE user_id=? ORDER BY created_on DESC', (user_id,))
         news = cursor.fetchall()
     return render_template('dashboard.html', news=news, user_id=user_id)
 
@@ -158,4 +159,8 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    try:
+        init_db()
+        app.run(debug=True, host='127.0.0.1', port=5000)
+    except Exception as e:
+        print(f"Ошибка при запуске: {e}")

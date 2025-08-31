@@ -1,0 +1,731 @@
+/* ========================================
+   ОСНОВНЫЕ СТИЛИ И НАСТРОЙКИ
+   ======================================== */
+
+/* Базовые настройки */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Заголовки */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h2, h3, h4, h5, h6 {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Ссылки */
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #5a6fd8;
+  text-decoration: none;
+}
+
+/* ========================================
+   НАВИГАЦИЯ
+   ======================================== */
+
+.navbar {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: nowrap;
+}
+
+.navbar-brand a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand a:hover {
+  color: #74b9ff;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  padding: 6px 12px;
+}
+/* ========================================
+   КОНТЕЙНЕРЫ СТРАНИЦ
+   ======================================== */
+
+.page-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.dashboard-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 1200px;
+}
+
+/* ========================================
+   ЗАГОЛОВКИ СТРАНИЦ
+   ======================================== */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.page-header h1, 
+.page-header h2 {
+  color: white;
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: none;
+  font-weight: 700;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.dashboard-header h1 {
+  color: white;
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: none;
+}
+
+.dashboard-welcome {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.dashboard-welcome strong {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dashboard-welcome p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ========================================
+   ФОРМЫ
+   ======================================== */
+
+.form-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ========================================
+   КНОПКИ
+   ======================================== */
+
+.btn {
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #5a6268 0%, #343a40 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #00a085 0%, #008f7a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-outline-primary {
+  border: 2px solid #667eea;
+  color: #667eea;
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-danger {
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  background: transparent;
+}
+
+.btn-outline-danger:hover {
+  background: #e74c3c;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Группы кнопок */
+.btn-group {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: nowrap !important;
+}
+
+.btn-group .btn {
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+/* Кнопка добавления новости */
+.add-news-btn {
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: inline-block;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.add-news-btn:hover {
+  background: linear-gradient(135deg, #00a085 0%, #008f7a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  color: white;
+  text-decoration: none;
+}
+
+/* ========================================
+   КАРТОЧКИ НОВОСТЕЙ
+   ======================================== */
+
+.news-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.news-card .card-body {
+  padding: 25px;
+  text-align: center;
+}
+
+.news-card .card-title {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.news-card .card-text {
+  color: #7f8c8d;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.news-card .text-muted {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.news-card .text-muted div {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.news-card .card-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-top: 1px solid #dee2e6;
+  padding: 15px;
+}
+
+/* Карточки для главной страницы */
+.news-card-main {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card-main:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.news-card-main .card-body {
+  padding: 25px;
+  flex: 1;
+}
+
+.news-card-main .card-title {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.news-card-main .card-text {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.news-card-main .card-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-top: 1px solid #dee2e6;
+  padding: 15px 25px;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   АЛЕРТЫ И СООБЩЕНИЯ
+   ======================================== */
+
+.alert {
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.alert-info {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  color: white;
+  border: none;
+}
+
+.alert-warning {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+  color: #2c3e50;
+  border: none;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+  color: white;
+  border: none;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  color: white;
+  border: none;
+}
+
+/* Пустое состояние */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+  border-radius: 20px;
+  margin: 40px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.empty-state h4 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.empty-state p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Ошибки */
+.error {
+  color: #e74c3c;
+  background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ========================================
+   УТИЛИТЫ И ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ
+   ======================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+  
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* ========================================
+   АДАПТИВНОСТЬ
+   ======================================== */
+
+/* Большие экраны */
+@media (min-width: 1200px) {
+  .page-container {
+    max-width: 1000px;
+  }
+  
+  .dashboard-container {
+    max-width: 1400px;
+  }
+}
+
+/* Дополнительные стили для кнопок - гарантия горизонтального расположения */
+.btn-group {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-group .btn {
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+  white-space: nowrap;
+  display: inline-block !important;
+}
+
+/* Переопределение Bootstrap стилей */
+.btn-group > .btn {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.btn-group > .btn:not(:first-child) {
+  margin-left: 0;
+}
+
+.btn-group > .btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  /* Контейнеры */
+  .page-container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .dashboard-container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  /* Заголовки */
+  .page-header h1, 
+  .page-header h2 {
+    font-size: 2rem;
+  }
+  
+  
+  
+  /* Кнопки */
+  .btn {
+  width: 100%;
+  margin-bottom: 10px;
+  }
+  
+  .btn-group {
+    flex-direction: row !important;
+    gap: 5px;
+    flex-wrap: nowrap !important;
+  }
+  
+  .btn-group .btn {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  
+  /* Формы */
+  .form-container {
+  padding: 20px;
+  }
+  
+  /* Карточки */
+  .news-card, 
+  .news-card-main {
+    margin-bottom: 20px;
+  }
+}
+
+/* Максимально сильные стили для кнопок */
+.btn-group,
+.btn-group * {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+
+.btn-group .btn,
+.btn-group a.btn {
+  display: inline-block !important;
+  flex: 1 !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  float: none !important;
+  position: relative !important;
+}
+
+/* Убираем все Bootstrap стили для групп кнопок */
+.btn-group > .btn:not(:first-child) {
+  margin-left: 0 !important;
+  border-top-left-radius: 25px !important;
+  border-bottom-left-radius: 25px !important;
+}
+
+.btn-group > .btn:not(:last-child) {
+  border-top-right-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+}
+
+/* Дополнительные стили для навигации */
+.navbar {
+  flex-wrap: nowrap !important;
+}
+
+.navbar-nav {
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+}
+
+.nav-link {
+  white-space: nowrap;
+  flex-shrink: 0;
+}

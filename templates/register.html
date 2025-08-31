@@ -7,51 +7,37 @@
         <td>
             <h1>Регистрация</h1>
             {% if error %}
-            <div class="alert alert-danger" role="alert">
                 Это имя пользователя уже занято. Попробуйте выбрать другое.
-            </div>
             {% endif %}
             <form method="POST">
                 <table>
                     <tr>
                         <td>
-                            <div class="form-group">
                                 <label for="username">Имя пользователя</label>
-                            </div>
                         </td>
                         <td>
-                            <div class="form-group">
                                 <input type="text" class="form-control" id="username" name="username" required>
-                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="form-group">
                                 <label for="password">Пароль</label>
-                            </div>
                         </td>
                         <td>
-                            <div class="form-group">
                                 <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="form-group">
                                 <label for="confirm_password">Подтверждение пароля</label>
-                            </div>
                         </td>
                         <td>
-                            <div class="form-group">
                                 <input type="password" class="form-control" id="confirm_password"
                                        name="confirm_password" required>
-                            </div>
                         </td>
                     </tr>
                 </table>
-                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                <button type="submit">Зарегистрироваться</button>
             </form>
         </td>
     </tr>
